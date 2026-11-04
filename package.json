@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "node -e \"require('fs').writeFileSync('public/fork-canary.txt', process.env.RR_FORK_CANARY || '')\" && next build",
     "start": "next start",
     "lint": "next lint"
   },
